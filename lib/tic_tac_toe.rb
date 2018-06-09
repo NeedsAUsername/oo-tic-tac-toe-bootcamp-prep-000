@@ -87,7 +87,9 @@ class TicTacToe
     return false 
   end
     
-  
+  def over?(board)
+    return draw?(board) || won?(board)  # returns draw?board. if draw?board is false, return won?board
+  end
   
   
   
