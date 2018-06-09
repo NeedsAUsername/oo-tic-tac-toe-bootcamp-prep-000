@@ -64,7 +64,7 @@ class TicTacToe
   
   def won?(board)
     WIN_COMBINATIONS.each do |array|
-      if position_taken?(board, array[0]) == true && board[array[0]] == board[array[1]] && board[array[2]] == board[array[0]]
+      if position_taken?(array[0]) == true && board[array[0]] == board[array[1]] && board[array[2]] == board[array[0]]
         return array 
       end
     end 
