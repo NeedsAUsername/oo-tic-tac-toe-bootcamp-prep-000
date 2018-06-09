@@ -30,7 +30,7 @@ class TicTacToe
     puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
   end
   
-  def input_to_index(user_input)
+  def input_to_index
     user_input.to_i - 1
   end
   
@@ -46,15 +46,15 @@ class TicTacToe
     index.between?(0,8) && !position_taken?(board, index) 
   end
   
-  def turn(board)
+  def turn
     puts "Please enter 1-9:"
     input = gets.strip
-    index = input_to_index(input)
+    index = input_to_index
     if valid_move?(board, index)
-      move(board, index, current_player(board))
-      display_board(board)
+      move(board, index, current_player)
+      display_board
     else
-      turn(board)
+      turn
     end
   end  
   
