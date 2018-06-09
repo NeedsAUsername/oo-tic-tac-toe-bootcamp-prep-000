@@ -71,6 +71,15 @@ class TicTacToe
     return false
   end 
   
+  def full?(board)
+    status = board.select{ |cell| cell == "X" || cell == "O" }
+    if status.length == 9
+      return true
+    else 
+      return false
+    end 
+  end 
+  
   
   
   
