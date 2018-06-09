@@ -91,6 +91,12 @@ class TicTacToe
     return draw? || won?  # returns draw?board. if draw?board is false, return won?board
   end
   
+  def winner
+    if won? != false
+      return board[won?[0]]
+    end
+  end
+  
   
   
   
