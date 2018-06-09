@@ -58,7 +58,7 @@ class TicTacToe
     end
   end  
   
-  def won?(board)
+  def won?
     WIN_COMBINATIONS.each do |array|
       if position_taken?(board, array[0]) == true && board[array[0]] == board[array[1]] && board[array[2]] == board[array[0]]
       return array 
@@ -67,7 +67,7 @@ class TicTacToe
     return false
   end 
 
-  def full?(board)
+  def full?
     status = board.select{ |cell| cell == "X" || cell == "O" }
     if status.length == 9
       return true
@@ -76,20 +76,34 @@ class TicTacToe
     end 
   end 
 
-  def draw?(board)
-    if full?(board) == true && won?(board) == false
+  def draw?
+    if full? == true && won? == false
       return true
     end
   end
   
-  def over?(board)
-    return draw?(board) || won?(board)  # returns draw?board. if draw?board is false, return won?board
+  def over?
+    return draw? || won?  # returns draw?board. if draw?board is false, return won?board
   end
 
-  def winner(board)
-    if won?(board) != false
-      return board[won?(board)[0]]
+  def winner
+    if won? != false
+      return board[won?[0]]
     end
+  end
+  
+  def play
+  counter = turn_count
+  while counter < 9 
+    turn
+    if won? != false
+      puts "Congratulations #{winner}!"
+      return
+    elsif full? == true
+      puts "Cat's Game!"
+      return
+    end 
+    counter += 1
   end
   
 
