@@ -26,7 +26,7 @@ class TicTacToe
     [6,4,2]
     ]
     
-  def input_to_index
+  def input_to_index(input)
     
 
   
