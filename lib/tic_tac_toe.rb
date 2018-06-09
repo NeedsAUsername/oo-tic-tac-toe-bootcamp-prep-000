@@ -62,7 +62,14 @@ class TicTacToe
      turn_count % 2 == 0 ? "X" : "O"
   end
   
-  
+  def won?(board)
+    WIN_COMBINATIONS.each do |array|
+      if position_taken?(board, array[0]) == true && board[array[0]] == board[array[1]] && board[array[2]] == board[array[0]]
+        return array 
+      end
+    end 
+    return false
+  end 
   
   
   
