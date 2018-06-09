@@ -62,7 +62,7 @@ class TicTacToe
      turn_count % 2 == 0 ? "X" : "O"
   end
   
-  def won?(board)
+  def won?
     WIN_COMBINATIONS.each do |array|
       if position_taken?(array[0]) == true && board[array[0]] == board[array[1]] && board[array[2]] == board[array[0]]
         return array 
@@ -71,7 +71,7 @@ class TicTacToe
     return false
   end 
   
-  def full?(board)
+  def full?
     status = board.select{ |cell| cell == "X" || cell == "O" }
     if status.length == 9
       return true
@@ -79,6 +79,7 @@ class TicTacToe
       return false
     end 
   end 
+  
   
   
   
