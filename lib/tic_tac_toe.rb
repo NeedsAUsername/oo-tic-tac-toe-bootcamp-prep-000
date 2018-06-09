@@ -1,6 +1,8 @@
 class TicTacToe
   def initialize
     @board = Array.new(9, " ")
+    puts "Welcome to TicTacToe!"
+    display_board
   end 
   
   def board 
