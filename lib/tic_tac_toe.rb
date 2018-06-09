@@ -103,8 +103,7 @@ class TicTacToe
     end
   
     if won?
-      our_winner = winner
-      if our_winner == "X"
+      if winner == "X"
         puts "Congratulations X!"
       else
         puts "Congratulations O!"
