@@ -82,5 +82,15 @@ class TicTacToe
     end
   end
   
+  def over?(board)
+    return draw?(board) || won?(board)  # returns draw?board. if draw?board is false, return won?board
+  end
+
+  def winner(board)
+    if won?(board) != false
+      return board[won?(board)[0]]
+    end
+  end
+  
 
 end 
